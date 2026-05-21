@@ -1,4 +1,3 @@
-import {SITE_TITLE} from "../../consts.ts";
 import "./header.scss";
 
 type IBlogPostProps = {
@@ -6,9 +5,23 @@ type IBlogPostProps = {
     // children: ReactNode;
 };
 
-export const Header = (props: IBlogPostProps) => {
-    return <header>
+interface IMenuItem {
+    link: string;
+    title: string;
+}
 
+const MenuItem = (item: IMenuItem) => {
+    return <li><a href={item.link}>{item.title}</a></li>;
+}
+
+export const Header = (props: IBlogPostProps) => {
+    const items: IMenuItem[] = [
+        {title: "Home", link: "/" },
+        {title: "Projects", link: "/projects" },
+        {title: "Posts", link: "/blog" },
+    ];
+
+    return <header>
         <div className={"logo"}>
             <a href="/">
                 <span />
@@ -17,9 +30,7 @@ export const Header = (props: IBlogPostProps) => {
 
         <nav>
             <ul>
-                <li><a href={"/"}>Landing</a></li>
-                <li><a href={"/projects"}>Projects</a></li>
-                <li><a href={"/blog"}>Posts</a></li>
+                {items.map((i, k) => <MenuItem {...i} key={k} />)}
             </ul>
         </nav>
 
