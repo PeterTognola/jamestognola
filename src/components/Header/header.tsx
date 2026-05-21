@@ -10,14 +10,16 @@ export const Header = (props: IBlogPostProps) => {
     return <header>
 
         <div className={"logo"}>
-            <span />
+            <a href="/">
+                <span />
+            </a>
         </div>
 
         <nav>
             <ul>
                 <li><a href={"/"}>Landing</a></li>
-                <li><a href={"#"}>Projects</a></li>
-                <li><a href={"#"}>Posts</a></li>
+                <li><a href={"/projects"}>Projects</a></li>
+                <li><a href={"/blog"}>Posts</a></li>
             </ul>
         </nav>
 
