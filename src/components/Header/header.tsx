@@ -15,9 +15,9 @@ export const Header = (props: IBlogPostProps) => {
 
         <nav>
             <ul>
-                <li><a href={"#"}>Test 1</a></li>
-                <li><a href={"#"}>Test 1</a></li>
-                <li><a href={"#"}>Test 1</a></li>
+                <li><a href={"/"}>Landing</a></li>
+                <li><a href={"#"}>Projects</a></li>
+                <li><a href={"#"}>Posts</a></li>
             </ul>
         </nav>
 

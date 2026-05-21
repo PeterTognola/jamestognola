@@ -44,7 +44,7 @@ header {
             display: block;
             width: 30px;
             height: 2px;
-            background: var(--nav-colour);
+            background: var(--border);
             position: absolute;
             opacity: 0;
             transition: opacity 0.2s ease-in;
@@ -55,12 +55,8 @@ header {
 
           &:hover {
             color: var(--nav-colour-hover);
-            //text-decoration: underline;
-            //text-underline-offset: 3px;
 
-            &:after {
-              opacity: 1;
-            }
+            &:after { opacity: 1 }
           }
         }
       }
