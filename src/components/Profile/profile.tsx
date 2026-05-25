@@ -12,6 +12,8 @@ export const Profile = () => {
 
         {isOpen && <div className="profile">
             <img src={ProfilePicture.src} alt="Picture of James Tognola"/>
+
+            <h3>James Tognola</h3>
             <p>Full Stack Developer | Head of Technology, Development & Ecommerce @ WJFG</p>
 
             <p>todo - Based in York</p>
