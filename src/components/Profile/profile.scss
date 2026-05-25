@@ -1,19 +1,17 @@
-.profile {
-  h2 {
-    display: flex;
-    justify-content: space-between;
+h2.profile {
+  display: flex;
+  justify-content: space-between;
 
-    cursor: pointer;
+  cursor: pointer;
 
+  > svg {
+    width: 18px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &.is-open {
     > svg {
-      width: 18px;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    &.is-open {
-      > svg {
-        transform: rotate(180deg);
-      }
+      transform: rotate(180deg);
     }
   }
 }
