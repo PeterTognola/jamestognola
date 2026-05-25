@@ -1,4 +1,4 @@
-import "./recent-posts.scss";
+import "./profile.scss";
 import {getCollection} from "astro:content";
 
 type IBlogPostProps = {};
@@ -19,8 +19,8 @@ const POSTS =
         .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
         .map(p => ({date: p.data.pubDate, title: p.data.title, link: `/blog/${p.id}`}));
 
-export const RecentPosts = (props: IBlogPostProps) => {
-    return <ul className="blog-posts">
-        {POSTS.map((post) => <ListItem key={post.link} {...post} />)}
-    </ul>;
+export const Profile = (props: IBlogPostProps) => {
+    return <div>
+        <h2>Profile</h2>
+    </div>;
 }
