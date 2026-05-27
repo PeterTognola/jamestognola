@@ -32,7 +32,7 @@ export const Header = () => {
         </nav>
 
         <div className={"icons"}>
-            <a href="https://github.com/petertognola">
+            <a href="https://github.com/petertognola" target="_blank">
                 <span>
                     <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github">
                         <path
