@@ -1,10 +1,5 @@
 import "./header.scss";
 
-type IBlogPostProps = {
-    // frontmatter: IFrontmatter;
-    // children: ReactNode;
-};
-
 interface IMenuItem {
     link: string;
     title: string;
@@ -14,7 +9,7 @@ const MenuItem = (item: IMenuItem) => {
     return <li><a href={item.link}>{item.title}</a></li>;
 }
 
-export const Header = (props: IBlogPostProps) => {
+export const Header = () => {
     const items: IMenuItem[] = [
         {title: "Home", link: "/"},
         {title: "Projects", link: "/projects"},
