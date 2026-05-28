@@ -1,13 +1,22 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Post from '../layouts/Page.astro';
+import {Page} from '../layouts/Page/page.tsx';
+import FallbackImage from "../assets/blog-placeholder-1.jpg";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = FallbackImage } = Astro.props;
+
 ---
 
-<Post
+
+<Page
 	title="Projects"
 	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
 	heroImage={AboutHeroImage}
+	url={Astro.url}
+	generator={Astro.generator}
+	site={Astro.site}
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -60,4 +69,4 @@ import Post from '../layouts/Page.astro';
 		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
 		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
 	</p>
-</Post>
+</Page>
