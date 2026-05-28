@@ -2,7 +2,6 @@ import '../../styles/global.scss';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../../assets/blog-placeholder-1.jpg';
 import { SITE_TITLE } from '../../consts';
-import { Font } from 'astro:assets';
 
 interface Props {
     title: string;
