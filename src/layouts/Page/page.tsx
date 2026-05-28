@@ -58,7 +58,7 @@ export const Page = ({title, description, heroImage, site, url, generator, child
         </div>
 
         <div className="meta">
-            <Profile /> {/* todo this is broken now. */}
+            <Profile client:load />
         </div>
     </div>
     </body>
