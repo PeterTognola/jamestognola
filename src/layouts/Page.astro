@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { Header } from '../components/Header/header';
+import { Footer } from '../components/Footer/footer';
+import {RecentPosts} from "../components/RecentPosts/recent-posts.tsx";
+import {Profile} from "../components/Profile/profile.tsx";
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style lang="scss">
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+
+		<div class="content">
+			<div class="meta">
+				<h2>Recent Posts</h2>
+
+				<RecentPosts />
+			</div>
+
+			<div class="inner-content">
+				<main>
+					<div class="hero-image">
+						{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					</div>
+
+					<h1>{title}</h1>
+
+					<slot />
+			</main>
+
+				<Footer />
+		</div>
+
+			<div class="meta">
+				<Profile client:load />
+			</div>
+		</div>
+	</body>
+</html>
