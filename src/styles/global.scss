@@ -79,6 +79,19 @@ body > div.content {
 		top:0;
 
 		position: sticky;
+		
+		@media screen and (max-width: 1366px) {
+			max-width: 110px;
+		}
+
+		@media screen and (max-width: 1096px) {
+			max-width: 90px;
+		}
+
+		@media screen and (max-width: 720px) {
+			max-width: 90px;
+			display: none;
+		}
 
 		> h2:first-child, > astro-island > h2:first-child {
 			margin-bottom: 40px;
@@ -89,6 +102,10 @@ body > div.content {
 		margin: 0 auto;
 
 		padding: 60px;
+
+		@media screen and (max-width: 510px) {
+			padding: 30px;
+		}
 
 		width: 100%;
 		max-width: 1200px;
