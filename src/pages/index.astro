@@ -5,26 +5,36 @@ import { Footer } from "../components/Footer/footer";
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { RecentPosts } from '../components/RecentPosts/recent-posts';
 import { Profile } from '../components/Profile/profile';
+import AboutHeroImage from "../assets/blog-placeholder-about.jpg";
+import {Page} from "../layouts/Page/page.tsx";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
+<Page
+	title="Hello, Astronaut!"
+	description="Lorem ipsum dolor sit amet"
+	url={Astro.url}
+	generator={Astro.generator}
+	site={Astro.site}
+>
 
-		<div class="content">
-			<div class="meta">
-				<h2>Recent Posts</h2>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--	<head>-->
+<!--		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />-->
+<!--	</head>-->
+<!--	<body>-->
+<!--		<Header />-->
 
-				<RecentPosts />
-			</div>
+<!--		<div class="content">-->
+<!--			<div class="meta">-->
+<!--				<h2>Recent Posts</h2>-->
 
-			<div class="inner-content">
-				<main>
-					<h1>Hello, Astronaut!</h1>
+<!--				<RecentPosts />-->
+<!--			</div>-->
+
+<!--			<div class="inner-content">-->
+<!--				<main>-->
+<!--					<h1>Hello, Astronaut!</h1>-->
 					<p>
 						Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
 						serves as a <strong>lightweight</strong>, minimally-styled starting point for anyone looking to build a personal
@@ -54,16 +64,4 @@ import { Profile } from '../components/Profile/profile';
 						<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
 						by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 					</p>
-				</main>
-
-				<Footer />
-			</div>
-
-
-
-			<div class="meta">
-				<Profile client:load />
-			</div>
-		</div>
-	</body>
-</html>
+</Page>

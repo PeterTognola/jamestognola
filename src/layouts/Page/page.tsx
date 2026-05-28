@@ -10,13 +10,21 @@ interface Props {
     children: React.ReactNode[];
     title: string;
     description: string;
-    heroImage: ImageMetadata;
+    heroImage?: ImageMetadata;
     site: URL | undefined;
     url: URL;
     generator: string;
 }
 
-export const Page = ({title, description, heroImage, site, url, generator, children}: Props) => {
+//
+// <html lang="en">
+//     <head>
+//     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+// </head>
+// <body>
+// <Header />
+
+export const Page = ({title, description, heroImage = null, site, url, generator, children}: Props) => {
     return <html lang="en">
     <head>
         <BaseHead
@@ -56,7 +64,7 @@ export const Page = ({title, description, heroImage, site, url, generator, child
         </div>
 
         <div className="meta">
-            <Profile />
+            <Profile /> {/* todo this is broken now. */}
         </div>
     </div>
     </body>
