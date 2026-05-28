@@ -1,13 +1,15 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import { Page } from '../layouts/Page/page';
-import Post from '../layouts/Post.js';
 ---
 
 <Page
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
 	heroImage={AboutHeroImage}
+	url={Astro.url}
+	generator={Astro.generator}
+	site={Astro.site}
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
