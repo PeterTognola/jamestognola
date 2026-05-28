@@ -2,6 +2,7 @@
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import {Page} from '../layouts/Page/page.tsx';
 import FallbackImage from "../assets/blog-placeholder-1.jpg";
+import { ClientRouter } from 'astro:transitions';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -18,6 +19,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 	generator={Astro.generator}
 	site={Astro.site}
 >
+	<ClientRouter slot="head" />
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo

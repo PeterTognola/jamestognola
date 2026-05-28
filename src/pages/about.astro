@@ -1,6 +1,7 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import { Page } from '../layouts/Page/page';
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <Page
@@ -11,6 +12,7 @@ import { Page } from '../layouts/Page/page';
 	generator={Astro.generator}
 	site={Astro.site}
 >
+	<ClientRouter slot="head" />
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo

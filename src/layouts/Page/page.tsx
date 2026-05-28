@@ -14,9 +14,10 @@ interface Props {
     site: URL | undefined;
     url: URL;
     generator: string;
+    head?: React.ReactNode;
 }
 
-export const Page = ({title, description, heroImage, site, url, generator, children}: Props) => {
+export const Page = ({title, description, heroImage, site, url, generator, children, head}: Props) => {
     return <html lang="en">
     <head>
         <BaseHead
@@ -26,6 +27,7 @@ export const Page = ({title, description, heroImage, site, url, generator, child
             url={url}
             generator={generator}
         />
+        {head}
         <style lang="scss">
 
         </style>

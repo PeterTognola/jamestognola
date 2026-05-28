@@ -1,6 +1,7 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import {Page} from "../layouts/Page/page.tsx";
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <Page
@@ -10,6 +11,7 @@ import {Page} from "../layouts/Page/page.tsx";
 	generator={Astro.generator}
 	site={Astro.site}
 >
+	<ClientRouter slot="head" />
 	<p>
 		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
 		serves as a <strong>lightweight</strong>, minimally-styled starting point for anyone looking to build a personal
