@@ -4,6 +4,11 @@ footer {
   margin-top:60px;
   padding-top:60px;
 
+  @media screen and (max-width: 510px) {
+    padding-top: 30px;
+    margin-top: 30px;
+  }
+
   > p {
     margin: 0;
     font-size: 0.8em;
