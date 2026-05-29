@@ -12,10 +12,7 @@
   color: rgb(var(--gray-dark));
 }
 .title {
-  margin-bottom: 1em;
-  padding: 1em 0;
-  text-align: center;
-  line-height: 1;
+  padding-top: 1em;
 }
 .title h1 {
   margin: 0 0 0.5em 0;
@@ -26,4 +23,42 @@
 }
 .last-updated-on {
   font-style: italic;
+}
+
+// All new below, the above needs checking.
+
+ul.posts {
+  display: flex;
+  flex-direction: row;
+  gap: 0 30px;
+  height: 100%;
+  align-items: center;
+
+  li {
+
+    a {
+      color: var(--nav-colour);
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: var(--border);
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        transform: translateX(-50%);
+        left: 50%;
+        margin-top: 7px;
+      }
+
+      &:hover {
+        color: var(--nav-colour-hover);
+
+        &:after { opacity: 1 }
+      }
+    }
+  }
 }
