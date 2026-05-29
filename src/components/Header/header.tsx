@@ -13,7 +13,7 @@ export const Header = () => {
     const items: IMenuItem[] = [
         {title: "Home", link: "/"},
         {title: "Projects", link: "/projects"},
-        {title: "Post", link: "/blog"},
+        {title: "Posts", link: "/blog"},
     ];
 
     return <header>
