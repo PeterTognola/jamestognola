@@ -1,0 +1,61 @@
+---
+import "./page.scss";
+import { BaseHead } from '../../components/BaseHead/base-head.tsx';
+import { Header } from '../../components/Header/header';
+import { Footer } from '../../components/Footer/footer';
+import { RecentPosts } from "../../components/RecentPosts/recent-posts.tsx";
+import { Profile } from "../../components/Profile/profile.tsx";
+
+interface Props {
+    title: string;
+    description: string;
+    heroImage?: ImageMetadata | undefined;
+    site: URL | undefined;
+    url: URL;
+    generator: string;
+}
+
+const { title, description, heroImage, site, url, generator } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead
+            title={title}
+            description={description}
+            site={site}
+            url={url}
+            generator={generator}
+        />
+        <slot name="head" />
+    </head>
+
+    <body>
+        <Header />
+
+        <div class="content">
+            <div class="meta">
+                <h2>Recent Posts</h2>
+                <RecentPosts />
+            </div>
+
+            <div class="inner-content">
+                <main>
+                    <div class="hero-image">
+                        {heroImage && <img width={1020} height={510} src={heroImage.src} alt=""/>}
+                    </div>
+
+                    <h1>{title}</h1>
+
+                    <slot />
+                </main>
+
+                <Footer />
+            </div>
+
+            <div class="meta">
+                <Profile client:load />
+            </div>
+        </div>
+    </body>
+</html>

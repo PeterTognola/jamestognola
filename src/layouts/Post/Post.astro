@@ -1,12 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { Header } from '../components/Header/header';
-import { Footer } from '../components/Footer/footer';
-import {RecentPosts} from "../components/RecentPosts/recent-posts.tsx";
-import {Profile} from "../components/Profile/profile.tsx";
+import { BaseHead } from '../../components/BaseHead/base-head.tsx';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { Header } from '../../components/Header/header';
+import { Footer } from '../../components/Footer/footer';
+import {RecentPosts} from "../../components/RecentPosts/recent-posts.tsx";
+import {Profile} from "../../components/Profile/profile.tsx";
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -15,7 +15,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead
+			title={title}
+			description={description}
+			site={Astro.site}
+			url={Astro.url}
+			generator={Astro.generator}
+		/>
+		<slot name="head" />
 		<style lang="scss">
 			.hero-image {
 				width: 100%;
@@ -63,32 +70,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 			<div class="inner-content">
 				<main>
-				<article>
-					<div class="hero-image">
-						{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-					</div>
-					<div class="prose">
-						<div class="title">
-							<div class="date">
-								<FormattedDate date={pubDate} />
-								{
-									updatedDate && (
-										<div class="last-updated-on">
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)
-								}
-							</div>
-							<h1>{title}</h1>
-							<hr />
+					<article>
+						<div class="hero-image">
+							{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 						</div>
-						<slot />
-					</div>
-				</article>
-			</main>
+						<div class="prose">
+							<div class="title">
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{
+										updatedDate && (
+											<div class="last-updated-on">
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)
+									}
+								</div>
+								<h1>{title}</h1>
+								<hr />
+							</div>
+							<slot />
+						</div>
+					</article>
+				</main>
 
 				<Footer />
-		</div>
+			</div>
 
 			<div class="meta">
 				<Profile client:load />
