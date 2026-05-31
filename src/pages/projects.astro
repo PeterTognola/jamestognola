@@ -1,11 +1,18 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Page from '../layouts/Page/Page.astro';
+import FallbackImage from "../assets/blog-placeholder-1.jpg";
 import { ClientRouter } from 'astro:transitions';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = FallbackImage } = Astro.props;
+
 ---
 
+
 <Page
-	title="About Me"
+	title="Projects"
 	description="Lorem ipsum dolor sit amet"
 	heroImage={AboutHeroImage}
 	url={Astro.url}

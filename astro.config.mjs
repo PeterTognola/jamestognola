@@ -11,9 +11,15 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), react()],
+  integrations: [
+      mdx(),
+      sitemap(),
+      react({
+        experimentalReactChildren: true,
+      })
+  ],
 
-  fonts: [
+  fonts: [ // todo can be removed once BaseHead.astro is removed.
       {
           provider: fontProviders.local(),
           name: 'Atkinson',
