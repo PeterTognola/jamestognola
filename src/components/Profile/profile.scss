@@ -21,4 +21,12 @@ div.profile {
     margin-top: 20px;
     font-size: 1.1em;
   }
+
+  p > span.icon {
+    display: inline-block;
+
+    svg {
+      display: inline-block;
+    }
+  }
 }
