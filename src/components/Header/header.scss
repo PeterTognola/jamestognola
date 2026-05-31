@@ -24,19 +24,12 @@ header {
       height: 100%;
       align-items: center;
 
-      li {
-
-        > a {
+      li > a {
           color: var(--nav-colour);
           position: relative;
 
           &:after {
-            content: '';
-            display: block;
             width: 30px;
-            height: 2px;
-            background: var(--border);
-            position: absolute;
             opacity: 0;
             transition: opacity 0.2s ease-in;
             transform: translateX(-50%);
@@ -47,16 +40,23 @@ header {
           &:hover {
             color: var(--nav-colour-hover);
 
-            &:after { opacity: 1 }
+            &:after {
+              opacity: 1;
+              background: var(--border);
+              width: 30px;
+            }
           }
         }
-      }
     }
   }
 
   div.icons {
     display: flex;
     align-items: center;
+
+    a:after {
+      content: none !important;
+    }
 
     > span, a > span {
       display: flex;
