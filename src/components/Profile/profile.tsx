@@ -19,11 +19,11 @@ export const Profile = () => {
             <p>Full Stack Developer | Head of Technology, Development & Ecommerce @ WJFG</p>
 
             <p className={"meta-icons"}>
-                <span className={"icon"}><a href={"https://maps.app.goo.gl/3Pjt6CCads3ohr4Y8"}><HomeIcon /> Based in York, UK</a></span>
+                <span className={"icon"}><a href={"https://maps.app.goo.gl/3Pjt6CCads3ohr4Y8"} target={"_blank"}><HomeIcon /> Based in York, UK</a></span>
 
-                <span className={"icon"}><a href={"https://wjfg.co.uk/"}><WorkIcon /> WJFG Limited</a></span>
+                <span className={"icon"}><a href={"https://wjfg.co.uk/"} target={"_blank"}><WorkIcon /> WJFG Limited</a></span>
 
-                <span className={"icon"}><a href={"https://qdeveloping.co.uk"}><WorkIcon /> QDeveloping Limited</a></span>
+                <span className={"icon"}><a href={"https://qdeveloping.co.uk"} target={"_blank"}><WorkIcon /> QDeveloping Limited</a></span>
             </p>
         </div>}
     </>;
