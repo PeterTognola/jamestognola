@@ -1,5 +1,6 @@
 import "./header.scss";
 import MenuIcon from "../../assets/icons/menu-icon.tsx";
+import {useState} from "react";
 
 interface IMenuItem {
     link: string;
@@ -11,6 +12,8 @@ const MenuItem = (item: IMenuItem) => {
 }
 
 export const Header = () => {
+    const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
+
     const items: IMenuItem[] = [
         {title: "Home", link: "/"},
         {title: "Projects", link: "/projects"},
@@ -22,12 +25,16 @@ export const Header = () => {
             <a href="/">
                 <span className={"logo"}>
                     <span>JT</span>
-                    <span className={"show-mobile"}><MenuIcon /></span>
+                    {/*<span className={"show-mobile"}><MenuIcon /></span>*/}
                 </span>
             </a>
+
+            <span className={"show-mobile"} onClick={() => setIsMobileOpen(o => !o)}>
+                <span className={"show-mobile"}><MenuIcon /></span>
+            </span>
         </div>
 
-        <nav>
+        <nav className={`${isMobileOpen && "mobile-menu"}`}>
             <ul>
                 {items.map((i, k) => <MenuItem {...i} key={k}/>)}
             </ul>

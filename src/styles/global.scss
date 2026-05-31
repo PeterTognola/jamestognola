@@ -36,7 +36,6 @@
 	--color: #464646;
 
 	--accent: #2337ff;
-	--accent-dark: #000d8a;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
@@ -241,7 +240,7 @@ hr {
 	}
 }
 
-@media (min-width: 421px) {
+@media (min-width: 431px) {
 	.show-mobile {
 		display: none;
 	}
