@@ -22,8 +22,25 @@ div.profile {
     font-size: 1.1em;
   }
 
+  p {
+    font-size: 0.82em;
+  }
+
+  p.meta-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size:16px;
+  }
+
   p > span.icon {
-    display: inline-block;
+    > a {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
 
     svg {
       display: inline-block;
