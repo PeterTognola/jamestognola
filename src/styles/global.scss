@@ -241,6 +241,12 @@ hr {
 	}
 }
 
+@media (min-width: 421px) {
+	.show-mobile {
+		display: none;
+	}
+}
+
 .sr-only1 {
 	border: 0;
 	padding: 0;

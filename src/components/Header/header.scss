@@ -24,6 +24,10 @@ header {
       height: 100%;
       align-items: center;
 
+      @media screen and (max-width: 420px) {
+        display: none;
+      }
+
       li > a {
           color: var(--nav-colour);
           position: relative;
@@ -73,9 +77,15 @@ header {
       &.logo {
         font-weight: bold;
         font-family: "Playfair Display", serif;
+
+        @media screen and (max-width: 420px) {
+          span:not(.show-mobile) {
+            display: none;
+          }
+        }
       }
 
-      > * {
+      > *, > span > * {
         opacity: 0.8;
         transition: opacity 0.25s ease;
 

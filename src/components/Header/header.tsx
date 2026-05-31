@@ -1,4 +1,5 @@
 import "./header.scss";
+import MenuIcon from "../../assets/icons/menu-icon.tsx";
 
 interface IMenuItem {
     link: string;
@@ -20,7 +21,8 @@ export const Header = () => {
         <div className={"icons"}>
             <a href="/">
                 <span className={"logo"}>
-                    JT
+                    <span>JT</span>
+                    <span className={"show-mobile"}><MenuIcon /></span>
                 </span>
             </a>
         </div>
