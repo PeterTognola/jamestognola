@@ -24,20 +24,14 @@ header {
       height: 100%;
       align-items: center;
 
-      @media screen and (max-width: 430px) {
-        display: none;
-      }
+      @media screen and (max-width: 430px) { display: none }
 
       li > a {
-          color: var(--nav-colour);
-          position: relative;
+        font-weight: 500;
 
           &:after {
             width: 30px;
             opacity: 0;
-            transition: opacity 0.2s ease-in;
-            transform: translateX(-50%);
-            left: 50%;
             bottom: -7px;
           }
 
@@ -86,9 +80,7 @@ header {
     display: flex;
     align-items: center;
 
-    a:after {
-      content: none !important;
-    }
+    a:after { content: none !important }
 
     > span, a > span {
       display: flex;
@@ -99,31 +91,24 @@ header {
       border-radius: 4px;
       border: 1px solid var(--border);
       cursor: pointer;
-
       color: var(--header-color);
 
       @media screen and (min-width: 430px) {
-        &.show-mobile {
-          display: none;
-        }
+        &.show-mobile { display: none }
       }
 
       &.logo {
         font-weight: bold;
         font-family: "Playfair Display", serif;
 
-        @media screen and (max-width: 430px) {
-            display: none;
-        }
+        @media screen and (max-width: 430px) { display: none }
       }
 
       > *, > span > * {
         opacity: 0.8;
         transition: opacity 0.25s ease;
 
-        &:hover {
-            opacity: 1;
-        }
+        &:hover { opacity: 1 }
       }
     }
   }

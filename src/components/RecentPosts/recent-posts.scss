@@ -3,24 +3,15 @@ ul.blog-posts {
 
   li {
     font-size: 0.8em;
-
     margin: 0.75em 0;
 
     > a {
-      color: var(--nav-colour);
-      position: relative;
+      font-weight: 400;
 
-      &:after { // todo merge as a class and reuse.
-        content: '';
-        display: block;
+      &:after {
         width: 30px;
-        height: 2px;
         background: var(--border);
-        position: absolute;
         opacity: 0;
-        transition: opacity 0.2s ease-in;
-        transform: translateX(-50%);
-        left: 50%;
         bottom: -7px;
 
         transform: none;

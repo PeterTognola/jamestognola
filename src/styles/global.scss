@@ -241,6 +241,7 @@ strong, b { font-weight: 700 }
 a {
 	color: var(--nav-colour);
 	position: relative;
+	font-weight: 600;
 
 	&:after {
 		content: '';
