@@ -1,6 +1,6 @@
 import "./projects.scss";
 import { SlimProject } from "./slim-project.tsx";
-import {LargeProject} from "./large-project.tsx";
+import { LargeProject } from "./large-project.tsx";
 
 interface Props {
     variant?: "slim" | "large";
