@@ -1,28 +1,22 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Page from '../layouts/Page/Page.astro';
-import FallbackImage from "../assets/blog-placeholder-1.jpg";
 import { ClientRouter } from 'astro:transitions';
-import {PROJECTS} from "../consts.ts";
-import { Projects } from "../components/Projects/projects.tsx";
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const { title, description, image = FallbackImage } = Astro.props;
-
+import { PROJECTS } from "../consts.ts";
+import { Projects as ProjectsComponent } from "../components/Projects/projects.tsx";
 ---
 
 <Page
 	title="Projects"
-	description="Lorem ipsum dolor sit amet"
-	heroImage={AboutHeroImage}
+	description={"A complete list of projects by James Tognola."}
 	url={Astro.url}
 	generator={Astro.generator}
 	site={Astro.site}
 >
 	<ClientRouter slot="head" />
 
-	<p>Take a look at some of my projects.</p>
+	<p>Take a look at some of my projects: idea stage, in-progress, and complete.</p>
 
-	<Projects projects={PROJECTS} variant="large" />
+	<hr />
+
+	<ProjectsComponent projects={PROJECTS} variant="large" />
 </Page>
