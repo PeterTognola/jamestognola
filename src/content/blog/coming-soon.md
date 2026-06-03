@@ -1,5 +1,5 @@
 ---
-title: 'Coming Soon'
+title: 'Coming soon...'
 description: 'Coming soon...'
 pubDate: 'Jun 03 2026'
 heroImage: '../../assets/blog-placeholder-3.jpg'
