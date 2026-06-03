@@ -1,5 +1,7 @@
 # Astro Starter Kit: Blog
 
+## TODO REWRITE AND STRUCTURE FOR CURRENT PROJECT.
+
 ```sh
 npm create astro@latest -- --template blog
 ```
