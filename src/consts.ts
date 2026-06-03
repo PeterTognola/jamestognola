@@ -5,6 +5,8 @@ import type {IMenuItem} from "./components/Header/header.tsx";
 import type {ILargeProject} from "./components/Projects/projects.tsx";
 
 import ProjectLoup from "./assets/project-loup.png";
+import ProjectYorkPrints from "./assets/project-york-prints.jpeg";
+import ProjectPlaceholder from "./assets/project-placeholder.jpg";
 
 export const SITE_TITLE = "James Tognola";
 export const SITE_DESCRIPTION = "Welcome to my website!";
@@ -28,7 +30,7 @@ export const PROJECTS: ILargeProject[] = [
         snippet: "Debian based global search and terminal",
         technologyKeywords: ["C++", "React", "Javascript/Typescript"],
         description: "",
-        picture: ""
+        picture: ProjectPlaceholder.src
     },
     {
         name: "jamestogno.la",
@@ -36,7 +38,7 @@ export const PROJECTS: ILargeProject[] = [
         snippet: "A clean Astro blog template",
         technologyKeywords: ["Typescript", "Astro"],
         description: "",
-        picture: ""
+        picture: ProjectPlaceholder.src
     },
     {
         name: "York Prints",
@@ -44,7 +46,7 @@ export const PROJECTS: ILargeProject[] = [
         snippet: "Personalised Maps and Prints",
         technologyKeywords: ["React SSR", "Typescript", "Puppet", "NodeJs", "C#", "Mongo"],
         description: "",
-        picture: ""
+        picture: ProjectYorkPrints.src
     },
     {
         name: "loup",
@@ -60,6 +62,6 @@ export const PROJECTS: ILargeProject[] = [
         snippet: "Yet another free e-commerce platform ",
         technologyKeywords: ["React SSR", "Typescript", "C#", "PostgreSQL"],
         description: "",
-        picture: ""
+        picture: ProjectPlaceholder.src
     }
 ];

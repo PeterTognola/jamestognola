@@ -20,7 +20,7 @@ export type ILargeProject = ISlimProject & {
 }
 
 export const Projects = ({ variant = "slim", projects }: Props) => {
-    return <ul className={`${variant}-project`}>
+    return <ul className={`${variant}-projects`}>
         {projects.map((p, i) =>
             variant === "slim"
                 ? <SlimProject key={i} {...p} />
