@@ -1,7 +1,9 @@
 import "./projects.scss";
+import { SlimProject } from "./slim-project.tsx";
+import { LargeProject } from "./large-project.tsx";
 
 interface Props {
-    variant: "slim" | "large"; // todo large is for Projects page.
+    variant?: "slim" | "large";
     projects: ISlimProject[] | ILargeProject[];
 }
 
@@ -14,13 +16,15 @@ export type ISlimProject = {
 
 export type ILargeProject = ISlimProject & {
     description: string;
-    // todo possibly picture.
+    picture: string;
 }
 
-export const Projects = ({ variant, projects }: Props) => { // todo implement large project.
-    return <ul className={"slim-projects"}>
-        {projects.map((p, i) => <li key={i}>
-            {p.snippet} @ <a href={p.link} target={"_blank"}>{p.name}</a> <em>({p.technologyKeywords.join(", ")})</em>
-        </li>)}
+export const Projects = ({ variant = "slim", projects }: Props) => {
+    return <ul className={`${variant}-projects`}>
+        {projects.map((p, i) =>
+            variant === "slim"
+                ? <SlimProject key={i} {...p} />
+                : <LargeProject key={i} {...p} />
+        )}
     </ul>;
 }
