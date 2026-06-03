@@ -1,11 +1,13 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
 import Page from "../layouts/Page/Page.astro";
 import { ClientRouter } from 'astro:transitions';
+import { Projects } from "../components/Projects/projects.tsx";
+import {PROJECTS} from "../consts.ts";
 ---
 
 <Page
-	title="Hello, Astronaut!"
+	title="Hello, and Welcome!"
 	description={SITE_DESCRIPTION}
 	url={Astro.url}
 	generator={Astro.generator}
@@ -13,32 +15,22 @@ import { ClientRouter } from 'astro:transitions';
 >
 	<ClientRouter slot="head" />
 	<p>
-		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-		serves as a <strong>lightweight</strong>, minimally-styled starting point for anyone looking to build a personal
-		website, blog, or portfolio with Astro.
+		Welcome to my collection of projects and random wittering of my thoughts, code, and experiences.
 	</p>
 	<p>
-		This template comes with a few integrations already configured in your
-		<code>astro.config.mjs</code> file. You can customize your setup with
-		<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-		React, or Vue to your project.
+		I am an experienced full-stack, working in leadership predominantly, and centred around shipping software at pace and efficiently. In my spare time I am, <em>at present</em>, focusing on: somewhat machine learning with <strong>TensorFlow + Typescript</strong>, weirdly fun frontend projects in <strong>React + Typescript</strong>, and programs that resemble APIs in <strong>C#</strong>.
 	</p>
-	<p>Here are a few ideas on how to get started with the template:</p>
-	<ul>
-		<li>Edit this page in <code>src/pages/index.astro</code></li>
-		<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-		<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-		<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-		<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-	</ul>
+	<p>You can "checkout" and view some of my most recent work:</p>
+
+	{<Projects
+		projects={PROJECTS}
+		variant="slim"
+	/>}
+
 	<p>
-		Have fun! If you get stuck, remember to
-		<a href="https://docs.astro.build/">read the docs</a>
-		or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+		I am a big believer of everything open source, proudly a Linux (Ubuntu) user, and push the open source mentality across businesses, colleagues and teams.
 	</p>
 	<p>
-		Looking for a blog template with a bit more personality? Check out
-		<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-		by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+		If you like the layout and design of this website and want to copy it, feel free to clone it <a href="https://github.com/PeterTognola/jamestognola/">from my GitHub</a>.
 	</p>
 </Page>

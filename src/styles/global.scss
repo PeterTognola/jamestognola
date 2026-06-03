@@ -35,7 +35,7 @@
 
 	--color: #464646;
 
-	--accent: #2337ff;
+	--accent: #222222;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
@@ -241,6 +241,7 @@ strong, b { font-weight: 700 }
 a {
 	color: var(--nav-colour);
 	position: relative;
+	font-weight: 600;
 
 	&:after {
 		content: '';
@@ -272,6 +273,16 @@ p {
 	margin: 2em 0;
 	color: #222;
 	font-size: 0.9em;
+}
+
+p:has(+ ul) {
+	margin-bottom: 15px;
+}
+
+p + ul {
+	margin-top: 15px;
+	list-style: square;
+	padding-left:20px;
 }
 
 // review the below
@@ -326,22 +337,4 @@ hr {
 	.show-mobile {
 		display: none;
 	}
-}
-
-.sr-only1 {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
 }

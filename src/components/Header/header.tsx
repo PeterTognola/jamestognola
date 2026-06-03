@@ -1,8 +1,9 @@
 import "./header.scss";
 import MenuIcon from "../../assets/icons/menu-icon.tsx";
 import {useState} from "react";
+import {GITHUB_LINK, LOGO_INITIALS, MENU_ITEMS} from "../../consts.ts";
 
-interface IMenuItem {
+export interface IMenuItem {
     link: string;
     title: string;
 }
@@ -14,18 +15,11 @@ const MenuItem = (item: IMenuItem) => {
 export const Header = () => {
     const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
 
-    const items: IMenuItem[] = [
-        {title: "Home", link: "/"},
-        {title: "Projects", link: "/projects"},
-        {title: "Posts", link: "/blog"},
-    ];
-
     return <header>
         <div className={"icons"}>
             <a href="/">
                 <span className={"logo"}>
-                    <span>JT</span>
-                    {/*<span className={"show-mobile"}><MenuIcon /></span>*/}
+                    <span>{LOGO_INITIALS}</span>
                 </span>
             </a>
 
@@ -36,12 +30,12 @@ export const Header = () => {
 
         <nav className={`${isMobileOpen && "mobile-menu"}`}>
             <ul>
-                {items.map((i, k) => <MenuItem {...i} key={k}/>)}
+                {MENU_ITEMS.map((i, k) => <MenuItem {...i} key={k}/>)}
             </ul>
         </nav>
 
         <div className={"icons"}>
-            <a href="https://github.com/petertognola" target="_blank">
+            <a href={GITHUB_LINK} target="_blank">
                 <span>
                     <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github">
                         <path
