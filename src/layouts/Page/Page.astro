@@ -42,9 +42,9 @@ const { title, description, heroImage, site, url, generator, showTitle = true } 
 
             <div class="inner-content">
                 <main>
-                    <div class="hero-image">
-                        {heroImage && <img width={1020} height={510} src={heroImage.src} alt=""/>}
-                    </div>
+                    {heroImage && <div class="hero-image">
+                        <img width={1020} height={510} src={heroImage.src} alt=""/>
+                    </div>}
 
                     {showTitle && <h1>{title}</h1>}
 

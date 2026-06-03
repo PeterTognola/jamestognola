@@ -40,13 +40,20 @@ const posts = (await getCollection('blog')).sort(
 			margin-bottom: 0.5rem;
 			border-radius: 12px;
 		}
-		ul li a { display: block }
+		ul li a {
+			display: block;
+
+			&:after { display: none }
+		}
 		.date {
 			margin: 0;
 			color: rgb(var(--gray));
 		}
 
-		p.description {margin: 1em 0;}
+		p.description {
+			margin: 1em 0;
+			font-weight: 400;
+		}
 
 		ul a:hover img { box-shadow: var(--box-shadow) }
 		@media (max-width: 720px) {
