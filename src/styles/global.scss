@@ -147,6 +147,7 @@ body > div.content {
 				display: block;
 				height: auto;
 				max-width: 100%;
+				position: relative;
 
 				> h2:first-child, > astro-island > h2:first-child {
 					transform: none;
