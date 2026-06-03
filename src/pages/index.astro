@@ -1,7 +1,9 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
 import Page from "../layouts/Page/Page.astro";
 import { ClientRouter } from 'astro:transitions';
+import { Projects } from "../components/Projects/projects.tsx";
+import {PROJECTS} from "../consts.ts";
 ---
 
 <Page
@@ -19,13 +21,12 @@ import { ClientRouter } from 'astro:transitions';
 		I am an experienced full-stack, working in leadership predominantly, and centred around shipping software at pace and efficiently. In my spare time I am, <em>at present</em>, focusing on: somewhat machine learning with <strong>TensorFlow + Typescript</strong>, weirdly fun frontend projects in <strong>React + Typescript</strong>, and programs that resemble APIs in <strong>C#</strong>.
 	</p>
 	<p>You can "checkout" and view some of my most recent work:</p>
-	<ul>
-		<li>Debian based global search and terminal @ <a href="https://github.com/PeterTognola/global-command/" target="_blank">Global Command</a> <em>(C++, React, Javascript/Typescript)</em>;</li>
-		<li>A clean Astro blog template @ <a href="https://jamestogno.la/">jamestogno.la</a> <em>(Typescript, Astro)</em>;</li>
-		<li>Personalised Maps and Prints @ <a href="https://yorkprints.co.uk/">York Prints</a> <em>(React SSR, Typescript, Puppet, NodeJs, C#, Mongo)</em>;</li>
-		<li>Privacy focused e-receipt platform @ <a href="https://loup.in/">loup</a> <em>(React Native, Typescript, NodeJs, Express/Apollo, Mongo, RabbitMQ, TensorFlow)</em>;</li>
-		<li>Yet another free e-commerce platform @ <a href="https://createyour.business/">Create Your Business</a> <em>(React SSR, Typescript, C#, PostgreSQL)</em>;</li>
-	</ul>
+
+	{<Projects
+		projects={PROJECTS}
+		variant="slim"
+	/>}
+
 	<p>
 		I am a big believer of everything open source, proudly a Linux (Ubuntu) user, and push the open source mentality across businesses, colleagues and teams.
 	</p>
