@@ -25,6 +25,14 @@ export const SHORT_BIO: string = "Full Stack Developer | Head of Technology, Dev
 
 export const PROJECTS: ILargeProject[] = [
     {
+        name: "Contact to VCard",
+        link: "https://github.com/PeterTognola/ContactToVCard/releases",
+        snippet: "An app to convert .CONTACT files to .VCF",
+        technologyKeywords: ["C#", "MVVM", "Avalonia UI"],
+        description: "",
+        picture: ProjectPlaceholder.src
+    },
+    {
         name: "Global Command",
         link: "https://github.com/PeterTognola/global-command/",
         snippet: "Debian based global search and terminal",
