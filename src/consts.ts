@@ -23,7 +23,7 @@ export const GITHUB_LINK: string = "https://github.com/petertognola";
 
 export const SHORT_BIO: string = "Full Stack Developer | Head of Technology, Development & Ecommerce @ WJFG";
 
-export const PROJECTS: ILargeProject[] = [ //
+export const PROJECTS: ILargeProject[] = [
     {
         name: "Contact to VCard",
         link: "https://github.com/PeterTognola/ContactToVCard/releases",
