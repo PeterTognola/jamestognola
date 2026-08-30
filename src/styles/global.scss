@@ -276,6 +276,27 @@ p {
 	font-size: 0.9em;
 }
 
+article {
+	ol, ul {
+		font-size: 0.9em;
+
+		list-style: square;
+		margin-left: 20px;
+
+		li {
+			padding-left: 7px;
+
+			&::marker {
+				font-size: 0.7em;
+			}
+		}
+	}
+
+	ol {
+		list-style: decimal;
+	}
+}
+
 p:has(+ ul) {
 	margin-bottom: 15px;
 }
